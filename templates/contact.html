@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Laxmi Narayani Pandey Public School{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Contact Us</h1>
+</div>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>School Address</h3>
+                    <p>Vill+Post- Belhi, Marauna</p>
+                    <p>Dist.- Supaul, Bihar 847452</p>
+                    <p>India</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>Phone Number</h3>
+                    <p>+91 9631891314</p>
+                    <p>+91 9934634545</p>
+                    
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>pandeyvijay955@gmail.com</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <h3>Office Hours</h3>
+                    <p><strong>Monday to Friday:</strong> 9:00 AM - 5:00 PM</p>
+                    <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🎓</div>
+                    <h3>U-DISE Code</h3>
+                    <p>10060400106</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h2>Send us a Message</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="contact_name">Your Name *</label>
+                        <input type="text" id="contact_name" name="contact_name" required 
+                               placeholder="Enter your full name" minlength="2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact_email">Email Address *</label>
+                        <input type="email" id="contact_email" name="contact_email" required 
+                               placeholder="Enter your email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact_phone">Phone Number</label>
+                        <input type="tel" id="contact_phone" name="contact_phone" 
+                               placeholder="Enter your phone number" maxlength="10" pattern="[0-9]{10}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact_subject">Subject *</label>
+                        <select id="contact_subject" name="contact_subject" required>
+                            <option value="">-- Select Subject --</option>
+                            <option value="Admission Inquiry">Admission Inquiry</option>
+                            <option value="Fee Information">Fee Information</option>
+                            <option value="Facilities Question">Facilities Question</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact_message">Message *</label>
+                        <textarea id="contact_message" name="contact_message" required 
+                                  placeholder="Enter your message here" rows="6" minlength="10"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <p class="form-note">* Required fields</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+    <div class="container">
+        <h2>Our Location</h2>
+        <p>Find us on the map. Located in Supaul district, Bihar.</p>
+        
+        <!-- Google Map Placeholder -->
+        <div class="map-placeholder">
+            <div class="map-content">
+                <h3>📍 Laxmi Narayan Pandey Public School</h3>
+                <p>Vill+Post- Belhi, Marauna, Dist.- Supaul, Bihar 847452</p>
+                <p class="map-note">
+                    Google Map coming Soon
+                    <br>&lt;<iframe src="https://maps.google.com/...">&gt;&lt;</iframe>&gt;
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Additional Contact Options -->
+<section class="additional-contact-section">
+    <div class="container">
+        <h2>Other Ways to Connect</h2>
+        <div class="contact-options">
+            <div class="option-card">
+                <h3>📧 Email Us</h3>
+                <p>Send your queries and we'll respond within 24 hours</p>
+                <p>pandeyvijay955@gmail.com</p>
+            </div>
+            <div class="option-card">
+                <h3>📞 Call Us</h3>
+                <p>Reach us during office hours for immediate assistance</p>
+                <p>+91 9631891314</p>
+                <p>+91 9934634545</p>
+            </div>
+            <div class="option-card">
+                <h3>🏫 Visit Us</h3>
+                <p>Come visit our school and explore our campus</p>
+            </div>
+            <div class="option-card">
+                <h3>📋 Apply Online</h3>
+                <p>Start your admission process with our online form</p>
+                <a href="{{ url_for('admission') }}">Apply Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('contact_name').value.trim();
+    const email = document.getElementById('contact_email').value.trim();
+    const subject = document.getElementById('contact_subject').value;
+    const message = document.getElementById('contact_message').value.trim();
+    
+    if (!name || !email || !subject || !message) {
+        alert('Please fill in all required fields');
+        return;
+    }
+    
+    // Validate email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+    }
+    
+    // Show success message
+    alert('Thank you for your message! We will get back to you soon.');
+    
+    // Reset form
+    this.reset();
+});
+</script>
+{% endblock %}

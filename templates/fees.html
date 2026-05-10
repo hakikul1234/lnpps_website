@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}Fee Structure - Laxmi Narayani Pandey Public School{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Fee Structure</h1>
+</div>
+
+<section class="fees-section">
+    <div class="container">
+        <h2>Transparent and Affordable Fee Structure</h2>
+        <p class="section-intro">Our fee structure is designed to be affordable and transparent. All fees are per academic session (2026–2027).</p>
+        
+        <div class="fee-tables-container">
+            <!-- General Fees -->
+            <div class="fee-table-box">
+                <h3>General Fees</h3>
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>Fee Type</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Admission Fee</td>
+                            <td class="amount">500</td>
+                        </tr>
+                        <tr>
+                            <td>Annual Fee</td>
+                            <td class="amount">FREE</td>
+                        </tr>
+                        <tr>
+                            <td>Examination Fee (Yearly)</td>
+                            <td class="amount">₹1,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Monthly Fees -->
+            <div class="fee-table-box">
+                <h3>Monthly Tuition Fees</h3>
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Monthly Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nursery</td>
+                            <td class="amount">₹600</td>
+                        </tr>
+                        <tr>
+                            <td>LKG</td>
+                            <td class="amount">₹700</td>
+                        </tr>
+                        <tr>
+                            <td>UKG</td>
+                            <td class="amount">₹800</td>
+                        </tr>
+                        <tr>
+                            <td>Class 1 to Class 5</td>
+                            <td class="amount">₹1,000</td>
+                        </tr>
+                        <tr>
+                            <td>Class 6 to Class 8</td>
+                            <td class="amount">₹1,100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="fee-information-section">
+    <div class="container">
+        <h2>Fee Details & Payment Information</h2>
+        <div class="info-cards-grid">
+            <div class="info-card">
+                <h3>Payment Schedule</h3>
+                <ul>
+                    <li>Monthly fees are due on or before the 15th of each month</li>
+                    <li>Annual examination fee is collected once per academic year</li>
+                    <li>Advance payment options are available</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Free Facilities</h3>
+                <ul>
+                    <li>Admission fee is only 500</li>
+                    <li>No hidden charges</li>
+                    <li>No annual fees</li>
+                    <li>Transparent fee structure</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Payment Methods</h3>
+                <ul>
+                    <li>Cash payment available</li>
+                    <li>Online transfer options</li>
+                    <li>Quarterly/Bi-annual payment plans</li>
+                    <li>Contact office for payment details</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Important Notes</h3>
+                <ul>
+                    <li>Fees are non-refundable</li>
+                    <li>Late fee may apply for delayed payments</li>
+                    <li>Scholarship options available for deserving students</li>
+                    <li>Contact office for more information</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="fee-calculator-section">
+    <div class="container">
+        <h2>Annual Fee Calculator</h2>
+        <p>Calculate the approximate annual cost for your child's education</p>
+        
+        <div class="calculator-container">
+            <div class="calculator-box">
+                <h3>Example Calculation for Class 1-5</h3>
+                <div class="calculation-row">
+                    <span>Monthly Tuition (₹1,000 × 12 months)</span>
+                    <span class="amount">₹12,000</span>
+                </div>
+                <div class="calculation-row">
+                    <span>Examination Fee (Annual)</span>
+                    <span class="amount">₹1,000</span>
+                </div>
+                <div class="calculation-row total">
+                    <span>Total Annual Cost</span>
+                    <span class="amount">₹13,000</span>
+                </div>
+            </div>
+
+            <div class="calculator-box">
+                <h3>Example Calculation for Nursery</h3>
+                <div class="calculation-row">
+                    <span>Monthly Tuition (₹600 × 12 months)</span>
+                    <span class="amount">₹7,200</span>
+                </div>
+                <div class="calculation-row">
+                    <span>Examination Fee (Annual)</span>
+                    <span class="amount">₹1,000</span>
+                </div>
+                <div class="calculation-row total">
+                    <span>Total Annual Cost</span>
+                    <span class="amount">₹8,200</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <h2>Questions About Fees?</h2>
+        <p>Contact our office for more information about fee payment, scholarships, or financial assistance options.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Us</a>
+    </div>
+</section>
+{% endblock %}

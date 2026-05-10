@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Laxmi Narayan Pandey Public School{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/lnpps.jpeg') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text"><img src="{{ url_for('static', filename='images/lnpps.png') }}" alt="LNPPS Logo" height="50"> LNPPS</span>
+                <div class="logo-sub">Laxmi Narayan Pandey Public School</div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{ url_for('facilities') }}" class="nav-link">Facilities</a></li>
+                <li class="nav-item"><a href="{{ url_for('classes') }}" class="nav-link">Classes</a></li>
+                <li class="nav-item"><a href="{{ url_for('fees') }}" class="nav-link">Fees</a></li>
+                <li class="nav-item"><a href="{{ url_for('admission') }}" class="nav-link">Admission</a></li>
+                <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Laxmi Narayan Pandey Public School</h3>
+                <p>Vill+Post- Belhi, Marauna</p>
+                <p>Dist.- Supaul, Bihar 847452</p>
+                <p>U-DISE Code: 10060400106</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +91 9631891314 +91 9934634545</p>
+                <p>Email: pandeyvijay955@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('admission') }}">Admission</a></li>
+                    <li><a href="{{ url_for('fees') }}">Fee Structure</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026-2027 Laxmi Narayan Pandey Public School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

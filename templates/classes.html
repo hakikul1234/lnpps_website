@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Classes - Laxmi Narayani Pandey Public School{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Classes Offered</h1>
+</div>
+
+<section class="classes-section">
+    <div class="container">
+        <h2>Classes from Nursery to Class 8th</h2>
+        <p class="section-intro">We offer comprehensive education programs across multiple class levels with dedicated teachers and tailored curricula.</p>
+        
+        <div class="classes-grid">
+            <div class="class-card">
+                <div class="class-icon">🍼</div>
+                <h3>Nursery</h3>
+                <p>Introduction to schooling with focus on play-based learning, basic alphabets, numbers, and social skills development.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 3-4 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">👶</div>
+                <h3>LKG (Lower Kindergarten)</h3>
+                <p>Structured learning with phonics, basic math, art, and creative activities to develop cognitive and motor skills.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 4-5 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">👧</div>
+                <h3>UKG (Upper Kindergarten)</h3>
+                <p>Advanced kindergarten curriculum focusing on reading, writing, and numeracy skills with increased academic rigor.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 5-6 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">📖</div>
+                <h3>Class 1</h3>
+                <p>Foundation year with emphasis on basic literacy, numeracy, and introduction to general knowledge and sciences.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 6-7 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">📚</div>
+                <h3>Class 2</h3>
+                <p>Building on Class 1 with enhanced English, Mathematics, Science, and Social Studies curricula.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 7-8 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">✏️</div>
+                <h3>Class 3</h3>
+                <p>Further development of core subjects with introduction to more complex concepts in math and sciences.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 8-9 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">🔬</div>
+                <h3>Class 4</h3>
+                <p>Intermediate level with specialized science and social sciences, supporting overall academic development.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 9-10 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">🌍</div>
+                <h3>Class 5</h3>
+                <p>Pre-secondary education with comprehensive subjects including English, Math, Science, Social Studies, and languages.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 10-11 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">📐</div>
+                <h3>Class 6</h3>
+                <p>Secondary education begins with structured curriculum, science lab work, and advanced mathematical concepts.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 11-12 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">🔭</div>
+                <h3>Class 7</h3>
+                <p>Intermediate secondary with detailed science modules, history, geography, and preparation for higher studies.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 12-13 years</span>
+                </div>
+            </div>
+
+            <div class="class-card">
+                <div class="class-icon">🎓</div>
+                <h3>Class 8</h3>
+                <p>Final primary class with comprehensive curriculum preparing students for secondary education with confidence.</p>
+                <div class="class-details">
+                    <span class="badge">Age: 13-14 years</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="curriculum-section">
+    <div class="container">
+        <h2>Our Curriculum</h2>
+        <p>
+            Our curriculum is designed to meet national standards while focusing on individual student needs. 
+            We combine traditional teaching methods with modern pedagogical approaches, ensuring that every child 
+            receives quality education and develops critical thinking, creativity, and problem-solving skills.
+        </p>
+    </div>
+</section>
+
+<section class="admissions-cta">
+    <div class="container">
+        <h3>Ready to Admit Your Child?</h3>
+        <p>Apply now for admission to any class from Nursery to Class 8th</p>
+        <a href="{{ url_for('admission') }}" class="btn btn-primary">Apply for Admission</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Laxmi Narayani Pandey Public School{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>About Our School</h1>
+</div>
+
+<section class="about-section">
+    <div class="container">
+        <h2>Our Mission & Vision</h2>
+        <div class="about-content">
+            <div class="about-box">
+                <h3>Our Mission</h3>
+                <p>
+                    At Laxmi Narayan Pandey Public School, our mission is to provide quality education that fosters academic excellence, 
+                    character development, and social responsibility. We strive to create a supportive learning environment where every child 
+                    can discover their potential and grow into responsible citizens.
+                </p>
+            </div>
+            <div class="about-box">
+                <h3>Our Vision</h3>
+                <p>
+                    We envision our school as a beacon of educational excellence, where discipline and merit are valued, where students 
+                    develop critical thinking skills, and where they are prepared for success in an ever-changing world.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="values-section">
+    <div class="container">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-number">1</div>
+                <h3>Quality Education</h3>
+                <p>We are committed to providing the highest standard of education with a rigorous curriculum</p>
+            </div>
+            <div class="value-card">
+                <div class="value-number">2</div>
+                <h3>Discipline</h3>
+                <p>Discipline is the foundation of success. We foster a culture of responsibility and accountability</p>
+            </div>
+            <div class="value-card">
+                <div class="value-number">3</div>
+                <h3>Student Development</h3>
+                <p>We focus on holistic development - academic, physical, emotional, and social growth</p>
+            </div>
+            <div class="value-card">
+                <div class="value-number">4</div>
+                <h3>Excellence</h3>
+                <p>We strive for excellence in everything we do, setting high standards for ourselves and our students</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="school-info-section">
+    <div class="container">
+        <h2>School Details</h2>
+        <div class="info-table">
+            <div class="info-row">
+                <div class="info-label">School Name</div>
+                <div class="info-value">Laxmi Narayan Pandey Public School</div>
+            </div> 
+            <div class="info-row">
+                <div class="info-label">Location</div>
+                <div class="info-value">Vill+Post- Belhi, Marauna, Dist.- Supaul, Bihar 847452</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">U-DISE Code</div>
+                <div class="info-value">10060400106</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Classes</div>
+                <div class="info-value">Nursery to Class 8th</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Academic Session</div>
+                <div class="info-value">2026–2027</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Established</div>
+                <div class="info-value">Dedicated to Quality Education</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="commitment-section">
+    <div class="container">
+        <h2>Our Commitment to You</h2>
+        <ul class="commitment-list">
+            <li>Safe and secure learning environment</li>
+            <li>Qualified and experienced faculty</li>
+            <li>Regular parent-teacher communication</li>
+            <li>Focus on individual student needs</li>
+            <li>Character building and moral values</li>
+            <li>Extracurricular activities and sports</li>
+            <li>Modern teaching methodologies</li>
+            <li>Affordable and transparent fee structure</li>
+        </ul>
+    </div>
+</section>
+<section class="galary-section">
+    <div class="container">
+        <h2>School Gallery</h2>
+        <div class="gallery-grid">
+            <img src="{{ url_for('static', filename='images/gallery1.jpeg') }}" >
+            <img src="{{ url_for('static', filename='images/gallery2.jpeg') }}"  >
+            <img src="{{ url_for('static', filename='images/gallery3.jpeg') }}"  >
+            <img src="{{ url_for('static', filename='images/gallery4.jpeg') }}"  >
+        </div>
+    </div>
+</section>
+{% endblock %}

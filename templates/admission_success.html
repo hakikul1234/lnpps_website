@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Admission Submitted - Laxmi Narayani Pandey Public School{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Admission Submitted</h1>
+</div>
+
+<section class="success-section">
+    <div class="container">
+        <div class="success-container">
+            <div class="success-icon">✓</div>
+            <h2>Application Submitted Successfully!</h2>
+            <p class="success-message">
+                Thank you for submitting your application to Laxmi Narayani Pandey Public School.
+            </p>
+            
+            <div class="success-details">
+                <p>
+                    We have received your admission application. Our team will review your information 
+                    and contact you shortly to confirm the admission and next steps.
+                </p>
+                
+                <h3>What's Next?</h3>
+                <ol class="next-steps">
+                    <li><strong>Confirmation Call:</strong> We will call you within 3-5 business days to confirm receipt</li>
+                    <li><strong>Document Submission:</strong> Submit required documents to our office</li>
+                    <li><strong>Admission Test:</strong> If applicable, your child may take an admission assessment</li>
+                    <li><strong>Final Confirmation:</strong> Upon approval, we will send admission confirmation</li>
+                    <li><strong>Fee Payment:</strong> Complete fee payment and registration</li>
+                </ol>
+            </div>
+
+            <div class="next-actions">
+                <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+            </div>
+
+            <div class="important-note">
+                <h3>📌 Important Notes</h3>
+                <ul>
+                    <li>Please keep your phone number active for confirmation call</li>
+                    <li>Ensure all submitted information is accurate</li>
+                    <li>For more information, visit our contact page or call us</li>
+                    <li>Admission is subject to verification and approval</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-items">
+            <div class="faq-item">
+                <h4>When will I hear back about my application?</h4>
+                <p>You will receive a confirmation call within 3-5 business days. We process applications in the order they are received.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What documents do I need to bring?</h4>
+                <p>Birth Certificate, Aadhar Card, Address Proof, Passport photos, and previous school certificates (if applicable).</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is there an admission fee?</h4>
+                <p>No, admission is completely FREE! You only pay the examination fee (₹1000/year) and monthly tuition fees.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I change the class after admission?</h4>
+                <p>Class changes are generally not allowed unless approved by the school management based on specific circumstances.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What is the refund policy?</h4>
+                <p>Fees are non-refundable. However, contact the office for special circumstances or withdrawal policies.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I pay the fees?</h4>
+                <p>Fees can be paid monthly via cash or online transfer. Contact our office for payment details and methods.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

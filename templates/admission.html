@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block title %}Admission - Laxmi Narayani Pandey Public School{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Admission Portal</h1>
+</div>
+
+<section class="admission-section">
+    <div class="container">
+        <h2>Admission Open for 2026–2027</h2>
+        <p class="section-intro">
+            Welcome to Laxmi Narayan Pandey Public School admission portal. We invite bright and motivated students 
+            from Nursery to Class 8th to join our educational community. Fill the form below to apply for admission.
+        </p>
+
+        {% if error %}
+        <div class="alert alert-error">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="admission-form-container">
+            <form method="POST" class="admission-form" id="admissionForm">
+                <fieldset>
+                    <legend>Student Information</legend>
+
+                    <div class="form-group">
+                        <label for="student_name">Student Name *</label>
+                        <input type="text" id="student_name" name="student_name" required 
+                               placeholder="Enter student's full name" minlength="2">
+                        <span class="error-message" id="error-student_name"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="father_name">Father's Name *</label>
+                        <input type="text" id="father_name" name="father_name" required 
+                               placeholder="Enter father's full name" minlength="2">
+                        <span class="error-message" id="error-father_name"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="class_name">Class Applying For *</label>
+                        <select id="class_name" name="class_name" required>
+                            <option value="">-- Select Class --</option>
+                            <option value="Nursery">Nursery</option>
+                            <option value="LKG">LKG</option>
+                            <option value="UKG">UKG</option>
+                            <option value="Class 1">Class 1</option>
+                            <option value="Class 2">Class 2</option>
+                            <option value="Class 3">Class 3</option>
+                            <option value="Class 4">Class 4</option>
+                            <option value="Class 5">Class 5</option>
+                            <option value="Class 6">Class 6</option>
+                            <option value="Class 7">Class 7</option>
+                            <option value="Class 8">Class 8</option>
+                        </select>
+                        <span class="error-message" id="error-class_name"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number *</label>
+                        <input type="tel" id="phone_number" name="phone_number" required 
+                               placeholder="Enter 10-digit phone number" maxlength="10" minlength="10" pattern="[0-9]{10}">
+                        <span class="error-message" id="error-phone_number"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <textarea id="address" name="address" required 
+                                  placeholder="Enter complete address" rows="4" minlength="10"></textarea>
+                        <span class="error-message" id="error-address"></span>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="admission-info-section">
+    <div class="container">
+        <h2>Important Information</h2>
+        <div class="info-boxes">
+            <div class="info-box">
+                <h3>📋 Required Documents</h3>
+                <ul>
+                    <li>Birth Certificate</li>
+                    <li>Aadhar Card</li>
+                    <li>Address Proof</li>
+                    <li>Passport Size Photos (4)</li>
+                    <li>Previous School Certificate (if applicable)</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>✓ Admission Process</h3>
+                <ul>
+                    <li>Fill the online application form</li>
+                    <li>Submit required documents</li>
+                    <li>Admission test/interview (if applicable)</li>
+                    <li>Confirmation of admission</li>
+                    <li>Fee payment and registration</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>🎓 Eligibility</h3>
+                <ul>
+                    <li>Nursery: Age 3+ years</li>
+                    <li>LKG: Age 4+ years</li>
+                    <li>UKG: Age 5+ years</li>
+                    <li>Classes 1-8: Age appropriate</li>
+                    <li>No entrance test for primary classes</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>⏰ Timeline</h3>
+                <ul>
+                    <li>Admission: Ongoing</li>
+                    <li>Academic Session: April to March</li>
+                    <li>Confirmation: Within 7 days</li>
+                    <li>Classes Start: As per academic calendar</li>
+                    <li>Contact office for exact dates</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-for-admission">
+    <div class="container">
+        <h2>Need Help?</h2>
+        <p>Have questions about admission? Contact us for more information.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Us</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('admissionForm').addEventListener('submit', function(e) {
+    const form = this;
+    let isValid = true;
+
+    // Get all form fields
+    const fields = {
+        'student_name': {
+            element: document.getElementById('student_name'),
+            minLength: 2,
+            message: 'Student name must be at least 2 characters long'
+        },
+        'father_name': {
+            element: document.getElementById('father_name'),
+            minLength: 2,
+            message: 'Father name must be at least 2 characters long'
+        },
+        'class_name': {
+            element: document.getElementById('class_name'),
+            message: 'Please select a class'
+        },
+        'phone_number': {
+            element: document.getElementById('phone_number'),
+            pattern: /^[0-9]{10}$/,
+            message: 'Phone number must be 10 digits'
+        },
+        'address': {
+            element: document.getElementById('address'),
+            minLength: 10,
+            message: 'Address must be at least 10 characters long'
+        }
+    };
+
+    // Validate each field
+    for (const [fieldName, field] of Object.entries(fields)) {
+        const errorElement = document.getElementById('error-' + fieldName);
+        const value = field.element.value.trim();
+
+        if (!value) {
+            errorElement.textContent = 'This field is required';
+            isValid = false;
+            field.element.classList.add('error');
+        } else if (field.minLength && value.length < field.minLength) {
+            errorElement.textContent = field.message;
+            isValid = false;
+            field.element.classList.add('error');
+        } else if (field.pattern && !field.pattern.test(value)) {
+            errorElement.textContent = field.message;
+            isValid = false;
+            field.element.classList.add('error');
+        } else {
+            errorElement.textContent = '';
+            field.element.classList.remove('error');
+        }
+    }
+
+    if (!isValid) {
+        e.preventDefault();
+    }
+});
+
+// Remove error class on input
+document.querySelectorAll('input, select, textarea').forEach(field => {
+    field.addEventListener('input', function() {
+        this.classList.remove('error');
+        document.getElementById('error-' + this.id).textContent = '';
+    });
+    
+    field.addEventListener('change', function() {
+        this.classList.remove('error');
+        document.getElementById('error-' + this.id).textContent = '';
+    });
+});
+</script>
+{% endblock %}

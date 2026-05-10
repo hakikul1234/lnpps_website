@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Laxmi Narayani Pandey Public School{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Laxmi Narayan Pandey Public School</h1>
+        <p class="hero-subtitle">Education with Excellence</p>
+        <p class="school-address">Vill+Post- Belhi, Marauna, Dist.- Supaul, Bihar 847452</p>
+        <p class="session-info">Session: 2026–2027</p>
+    </div>
+</div>
+
+<section class="welcome-section">
+    <div class="container">
+        <h2>Welcome to LNPPS</h2>
+        <p class="welcome-text">
+            Laxmi Narayan Pandey Public School is committed to providing quality education with emphasis on discipline, 
+            character development, and overall student growth. Our dedicated faculty and modern facilities ensure a nurturing 
+            environment where every child can excel academically and personally.
+        </p>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-grid">
+            <div class="cta-card">
+                <h3>Ready to Join?</h3>
+                <p>Start your child's educational journey with us</p>
+                <a href="{{ url_for('admission') }}" class="btn btn-primary">Apply Now</a>
+            </div>
+            <div class="cta-card">
+                <h3>Fee Information</h3>
+                <p>Check our transparent and affordable fee structure</p>
+                <a href="{{ url_for('fees') }}" class="btn btn-primary">View Fees</a>
+            </div>
+            <div class="cta-card">
+                <h3>Get in Touch</h3>
+                <p>Have questions? We&apos;re here to help</p>
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+ <div class="director-box">
+    
+    <!-- Director Text -->
+    <h3 class="director-title">Director</h3>
+
+    <!-- Director Image -->
+    <img src="{{ url_for('static', filename='images/director1.jpeg') }}" 
+         alt="Director Image" 
+         class="director-image">
+
+    <!-- Director Name -->
+    <h4 class="director-name">Mr.Vijay kumar Pandey</h4>
+
+</div>
+
+<section class="highlights-section">
+    <div class="container">
+        <h2>Why Choose LNPPS?</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-icon">📚</div>
+                <h3>Quality Education</h3>
+                <p>Comprehensive curriculum designed for holistic development</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🎓</div>
+                <h3>Experienced Teachers</h3>
+                <p>Dedicated and qualified educators committed to student success</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🏆</div>
+                <h3>Modern Facilities</h3>
+                <p>State-of-the-art infrastructure supporting learning</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">👥</div>
+                <h3>Student Care</h3>
+                <p>Safe, nurturing environment for all-round development</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="info-section">
+    <div class="container">
+        <div class="info-grid">
+            <div class="info-box">
+                <h3>U-DISE Code</h3>
+                <p class="info-value">10060400106</p>
+            </div>
+            <div class="info-box">
+                <h3>Classes Offered</h3>
+                <p class="info-value">Nursery to Class 8th</p>
+            </div>
+            <div class="info-box">
+                <h3>Academic Year</h3>
+                <p class="info-value">2026–2027</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
