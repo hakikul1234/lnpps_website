@@ -132,7 +132,68 @@ body {
     border-radius: 2px;
     transition: all 0.3s ease;
 }
+/* ================= MOBILE RESPONSIVE NAVBAR ================= */
 
+@media (max-width: 768px) {
+
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .logo-text {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .logo-text img {
+        height: 40px;
+    }
+
+    .logo-sub {
+        font-size: 0.6rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-blue);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-menu.active {
+        max-height: 500px;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-link {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+}
 /* ===========================
    Hero Section
    =========================== */
